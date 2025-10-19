@@ -12,19 +12,19 @@ type FilterSelectProps<T> = {
   ratingKey: keyof T; // key for rating sorting (must be number)
 };
 
-function CustomSelect<T extends Record<string, any>>({
+function CustomSelect<T extends Record<string, string | number>>({
   data,
   setData,
   nameKey,
   ratingKey,
 }: FilterSelectProps<T>) {
-  const [selected, setSelected] = useState<string>("default");
+  const [selected, setSelected] = useState<SortOption | "default">("default");
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value as SortOption;
     setSelected(value);
 
-    let sorted = [...data];
+    const sorted = [...data]; // ✅ use const
 
     switch (value) {
       case "a-z":

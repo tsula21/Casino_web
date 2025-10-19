@@ -36,7 +36,12 @@ const Hero = () => {
       <Slider {...settings}>
         {slides.map((item, i) => (
           <div key={i} className={styles["slide-wrap"]}>
-            <img src={item} alt={`Slide ${i + 1}`} />
+            <Image
+              src={item}
+              alt={`Slide ${i + 1}`}
+              fill // fills parent container
+              className={styles.slideImage}
+            />
           </div>
         ))}
       </Slider>

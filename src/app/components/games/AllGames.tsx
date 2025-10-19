@@ -3,12 +3,11 @@ import React, { useMemo, useState } from "react";
 import styles from "@/app/styles/Games.module.scss";
 import CustomSelect from "../customInputs/CustomSelect";
 import games from "@/app/data/games.json";
-import Image from "next/image";
 import FilterDropdown from "../customInputs/FilterDropdown";
 import Link from "next/link";
 
 const AllGames = () => {
-  const [items, setItems] = useState<any[]>(games);
+  const [items, setItems] = useState(games);
   // Selected filters
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
