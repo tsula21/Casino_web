@@ -5,7 +5,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "@/app/styles/Hero.module.scss";
-import Image from "next/image";
 
 const Hero = () => {
   const settings = {
@@ -36,12 +35,7 @@ const Hero = () => {
       <Slider {...settings}>
         {slides.map((item, i) => (
           <div key={i} className={styles["slide-wrap"]}>
-            <Image
-              src={item}
-              alt={`Slide ${i + 1}`}
-              fill // fills parent container
-              className={styles.slideImage}
-            />
+            <img src={item} alt={`Slide ${i + 1}`} />
           </div>
         ))}
       </Slider>
