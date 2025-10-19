@@ -4,14 +4,13 @@ import Image from "next/image";
 import styles from "@/app/styles/GameDetails.module.scss";
 
 interface GamePageProps {
-  params: { gameId: string };
+  params: Promise<{ gameId: string }>;
 }
 
-const SingleGame = ({ params }: GamePageProps) => {
-  const gameId = Number(params.gameId);
-  const game = games.find((g) => g.id === gameId);
+const SingleGame = async ({ params }: GamePageProps) => {
+  const { gameId } = await params;
+  const game = games.find((g) => g.id === Number(gameId));
 
-  // If not found shows 404 page
   if (!game) return notFound();
 
   return (
@@ -30,8 +29,8 @@ const SingleGame = ({ params }: GamePageProps) => {
             <strong>Provider:</strong> {game.provider}
           </p>
           <p>
-            <strong>Type:</strong>
-            {game.type == "casino" ? "Live Casino" : game.type}
+            <strong>Type:</strong>{" "}
+            {game.type === "casino" ? "Live Casino" : game.type}
           </p>
           <p>
             <strong>Rating:</strong> ⭐ {game.rate}
