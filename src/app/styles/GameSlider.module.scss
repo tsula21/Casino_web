@@ -1,0 +1,40 @@
+.gameSlider_wrapper {
+  color: #fff;
+  max-width: 1200px;
+  width: 100%;
+  margin: 50px auto 0 auto;
+
+  .slider_title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 20px;
+    user-select: none;
+    text-decoration: none;
+    color: #fff;
+
+    .icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .slider {
+    transition: all 0.2s ease;
+
+    .single_slider_wrapper {
+      padding: 0 8px;
+      box-sizing: border-box;
+      outline: none;
+
+      img {
+        width: 100%;
+        border-radius: 8px;
+        display: block;
+        cursor: pointer;
+      }
+    }
+  }
+}

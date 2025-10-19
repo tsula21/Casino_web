@@ -1,0 +1,89 @@
+/* GameDetails.module.scss */
+.container {
+  padding: 40px;
+  color: white;
+  background: #0f212e;
+  // min-height: 100vh;
+  min-height: calc(100vh - 60px);
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 24px;
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+}
+
+.details {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .image {
+    border-radius: 12px;
+    object-fit: cover;
+    width: 300px;
+    height: 400px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .info {
+    max-width: 500px;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
+
+    p {
+      margin: 6px 0;
+      font-size: 16px;
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
+    }
+
+    .description {
+      margin-top: 12px;
+      opacity: 0.85;
+      line-height: 1.6;
+    }
+
+    .playButton {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #00a6bc;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+        padding: 10px 16px;
+      }
+    }
+  }
+}

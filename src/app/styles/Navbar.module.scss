@@ -1,0 +1,88 @@
+.nav_container {
+  width: 100%;
+  background-color: var(--foreground);
+  box-shadow: #0003 0 4px 6px -1px, #0000001f 0 2px 4px -1px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  .header {
+    width: calc(100% - 300px);
+    max-height: 60px;
+    margin: 0 auto;
+    padding: 8px 0;
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .logo {
+        display: flex;
+        align-items: center;
+
+        .nav_logo {
+          width: 80px;
+          color: #ffffff;
+
+          &:hover {
+            color: #0070f3;
+          }
+        }
+      }
+
+      .actions {
+        display: flex;
+        gap: 16px;
+
+        button {
+          height: 44px;
+          padding: 10px 22px;
+          border-radius: 8px;
+          border: unset;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.25s ease;
+
+          &.login {
+            background: var(--secondaryBlue);
+            color: #ffffff;
+
+            &:hover {
+              background: #557086;
+            }
+          }
+
+          &.signup {
+            background: #1475e1;
+            color: #fff;
+
+            &:hover {
+              background: #105eb4;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      width: calc(100% - 100px);
+    }
+  }
+  @media (max-width: 481px) {
+    .header {
+      width: calc(100% - 50px);
+
+      .navbar {
+        .actions {
+          button {
+            height: 36px;
+            padding: 5px 14px;
+          }
+        }
+      }
+    }
+  }
+}
